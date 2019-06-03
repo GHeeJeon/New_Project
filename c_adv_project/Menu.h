@@ -6,7 +6,7 @@
 #define LIST_BY_NAME 2
 #define QUIT_PROGRAM 0
 
-#define CLEAR_INPUT() while( getchar() != '\n' );
+#define CLEAR_INPUT() while(getchar() != '\n');
 
 int SelectMenu(void);
 

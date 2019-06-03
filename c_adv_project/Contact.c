@@ -3,24 +3,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "contact.h"
+#include "Contact.h"
 #include "menu.h"
 
-CONTACT* Initialize(int totalCnt)
-{
-	CONTACT *p = malloc(sizeof(CONTACT) * totalCnt);
+CONTACT* Initialize(int totalCnt) {
+	// 구조체 포인터를 구조체 크기만큼 선언
+	CONTACT *p = (CONTACT*)malloc(sizeof(CONTACT) * totalCnt);
+
+	// 구조체에 값이 들어있으면 초기화
 	if (p != NULL)
 		memset(p, 0, sizeof(CONTACT) * totalCnt);
+
+	/* 위의 코드와 같다
+	for (int i = 0; i < totalCnt; i++) {
+		*(p  + i)->name = '\0';
+		*(p  + i)->phone = '\0';
+	}
+	*/
+
 	return p;
 }
 
-int AddContactInfo(CONTACT *contacts, int maxCnt, int *pCurCnt)
-{
+int AddContactInfo(CONTACT *contacts, int maxCnt, int *pCurCnt) {
 	CONTACT *p = NULL;
 	int ring;
 
 	if (maxCnt == *pCurCnt)
 		return 0;
+
 
 	p = &contacts[*pCurCnt];
 	printf("\n이    름 : ");
@@ -75,4 +85,10 @@ int CompareByName(const void* e1, const void* e2)
 	const CONTACT *p1 = (const CONTACT*)e1;
 	const CONTACT *p2 = (const CONTACT*)e2;
 	return strcmp(p1->name, p2->name);
+	// 이부분은 아래와 같다
+	/*
+	if (p1->name < p2->name) return -1;
+	else if (p1->name > p2->name) return 1;
+	else return 0;
+	*/
 }

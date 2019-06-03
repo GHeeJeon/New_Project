@@ -7,9 +7,9 @@
 
 int main(void)
 {
-	CONTACT *contacts = NULL;
-	int max_contacts = 0;
-	int contacts_cnt = 0;
+	CONTACT *contacts = NULL; // CONTACT 구조체 배열의 주소
+	int max_contacts = 0; // 최대 저장 가능한 연락처의 개수
+	int contacts_cnt = 0; // 지금까지 등록된 연락처의 개수
 	int menu = 0;
 	do {
 		printf("최대 연락처의 개수를 입력하세요 : ");
