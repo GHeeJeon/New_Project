@@ -144,11 +144,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Contact.h" />
+    <ClInclude Include="Control.h" />
     <ClInclude Include="FileIo.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Contact.c" />
+    <ClCompile Include="Control.c" />
     <ClCompile Include="FileIo.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Menu.c" />
